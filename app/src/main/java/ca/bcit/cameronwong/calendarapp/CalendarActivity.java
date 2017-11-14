@@ -12,10 +12,12 @@ import android.widget.CalendarView;
 
 /**
  * Created by cameronwong on 2017-11-07.
+ * Class shows a calendar.
  */
 
 public class CalendarActivity extends AppCompatActivity {
 
+    //Tag used for logging
     private static final String TAG = "CalendarActivity";
 
     private CalendarView mCalendarView;
@@ -24,26 +26,27 @@ public class CalendarActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_layout);
-
+        //log this class startup activity in the console
         Log.d(TAG, "onCreate: Started CalendarActivity class");
 
         mCalendarView = (CalendarView) findViewById(R.id.calendarView);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                //log the date that was clicked
                 String date = year + "/" + month + "/" + dayOfMonth;
                 Log.d(TAG, "onSelectedDayChange: ClickedDate: " + date);
-
                 Intent intent = new Intent(CalendarActivity.this, ChecklistActivity.class);
                 startActivity(intent);
             }
         });
 
         Button btnReturnToMain = (Button) findViewById(R.id.btnToMainFroCalendar);
-
+        //returns you to the MainActivity from the CalendarActivity
         btnReturnToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //log that the button was clicked
                 Log.d(TAG, "onClick: Clicked btnReturnToMain");
                 Intent intent = new Intent (CalendarActivity.this, MainActivity.class);
                 startActivity(intent);
