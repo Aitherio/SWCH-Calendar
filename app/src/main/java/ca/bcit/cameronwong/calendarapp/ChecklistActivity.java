@@ -24,8 +24,8 @@ public class ChecklistActivity extends AppCompatActivity {
         //log this class startup activity in the console
         Log.d(TAG, "onCreate: Started ChecklistActivity class");
 
+        //returns you to the MainActivity from the ChecklistActivity
         Button btnReturnToMain = (Button) findViewById(R.id.btnToMainFroChecklist);
-
         btnReturnToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

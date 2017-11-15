@@ -20,16 +20,17 @@ public class CalendarActivity extends AppCompatActivity {
     //Tag used for logging
     private static final String TAG = "CalendarActivity";
 
-    private CalendarView mCalendarView;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_layout);
+
         //log this class startup activity in the console
         Log.d(TAG, "onCreate: Started CalendarActivity class");
 
-        mCalendarView = (CalendarView) findViewById(R.id.calendarView);
+        //When a date is clicked on the calendar, flip the panel and go to that date's details
+        //Details include the events of the day, as well as any notes or to do list items
+        CalendarView mCalendarView = (CalendarView) findViewById(R.id.calendarView);
         mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -41,8 +42,8 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });
 
-        Button btnReturnToMain = (Button) findViewById(R.id.btnToMainFroCalendar);
         //returns you to the MainActivity from the CalendarActivity
+        Button btnReturnToMain = (Button) findViewById(R.id.btnToMainFroCalendar);
         btnReturnToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

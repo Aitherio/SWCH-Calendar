@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnToCalendar;
     //button takes you to the Notes activity
     private Button btnToNotes;
+    //button takes you to the Checklist activity
+    private Button btnToChecklist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnToCalendar = (Button) findViewById(R.id.btnToCalendar);
         btnToNotes = (Button) findViewById(R.id.btnToNotes);
+        btnToChecklist = (Button) findViewById(R.id.btnToChecklist);
 
         Intent incomingIntent = getIntent();
         String date = incomingIntent.getStringExtra("date");
