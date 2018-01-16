@@ -11,8 +11,8 @@ The development process is still in progress.
 
 Team members:
 
-https://github.com/tkyc
+[Terry Chow](https://github.com/tkyc)
 
-https://github.com/burtbot25
+[Wilburt Herrera](https://github.com/burtbot25)
 
-https://github.com/dshin21
+[Daniel Shin](https://github.com/dshin21)
